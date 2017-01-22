@@ -1,0 +1,22 @@
+{
+  "name": "Photo Album Project",
+  "authors": [
+    "Dan Svorcan (as a student at Hack Reactor)"
+  ],
+  "description": "Photo Album extra credit project",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="photoAlbum">
+<head>
+  <title>Photo Album Project</title>
+  <script type="text/javascript" src=bower_components/jquery/dist/jquery.js></script>
+  <script type="text/javascript" src=bower_components/angular/angular.js></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Welcome to the Photo Album App!</h1>
+
+  <div ng-controller="photoGalleryCtrl">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Image Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="photo in photos">
+          <th scope="row">{{photo.id}}</th>
+          <td>
+            <a href="#" data-toggle="modal" data-target="#{{photo.id}}">{{photo.name}}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div ng-repeat="photo in photos" class="modal fade" id="{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content thumbnail">
+          <img src="{{photo.url}}" alt="...">
+          <div class="caption">
+            <h3>{{photo.name}}</h3>
+            <p>{{photo.description}}</p>
+            <p>Rating: {{photo.rating}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--  Real Gallery with thumbnails and modals
+  <div ng-controller="photoGalleryCtrl">
+
+    <div class="row" >
+      <div class="col-md-6" ng-repeat="photo in photos">
+        <a href="#" class="thumbnail" data-toggle="modal" data-target="#{{photo.id}}">
+          <img src="{{photo.url}}" alt="...">
+        </a>
+        <div class="modal fade" id="{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <img src="{{photo.url}}" alt="...">
+              {{photo.url}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+  
+  
+  
+  </div>
+
+</body>
+</html>
